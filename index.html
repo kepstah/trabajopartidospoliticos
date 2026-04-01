@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Partidos Políticos en la Argentina</title>
+  <meta
+    name="description"
+    content="Sistema de Partidos Políticos en la Argentina. Análisis descriptivo y comparativo de las principales fuerzas políticas contemporáneas."
+  >
+  <meta name="author" content="Dante Emanuel Guspero">
+  <meta name="keywords" content="partidos políticos Argentina, sistema político, política y ciudadanía">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#f6f1ea",
+              surface: "#fffdf9",
+              ink: "#18212b",
+              slate: "#4d5b68",
+              line: "#d3d9de",
+              steel: "#72808c",
+              soft: "#edf1f4",
+              accent: "#d9e3eb"
+            },
+            fontFamily: {
+              display: ["Fraunces", "serif"],
+              body: ['"Source Sans 3"', "sans-serif"]
+            },
+            boxShadow: {
+              soft: "0 16px 36px rgba(24, 33, 43, 0.08)"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body class="bg-paper text-ink antialiased">
+  <header class="site-header sticky top-0 z-50 border-b border-line/80 bg-paper/96">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#hero" class="max-w-[16rem] font-display text-lg leading-tight text-ink transition hover:text-slate sm:max-w-xs">
+        Sistema de Partidos Políticos en la Argentina
+      </a>
+
+      <button
+        type="button"
+        id="menu-toggle"
+        class="inline-flex items-center justify-center rounded-full border border-line bg-surface p-3 text-slate transition hover:border-steel hover:text-ink lg:hidden"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Secciones principales">
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#introduccion">Inicio</a>
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#marco-teorico">Marco Institucional</a>
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#fichas-de-partidos">Partidos y coaliciones</a>
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#comparacion-general">Comparación general</a>
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#conclusion">Conclusión</a>
+        <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate transition hover:bg-surface hover:text-ink" href="#fuentes">Fuentes</a>
+      </nav>
+    </div>
+
+    <nav
+      id="mobile-menu"
+      class="site-mobile-menu invisible mx-4 mb-4 flex max-h-0 origin-top flex-col gap-1 overflow-hidden rounded-3xl border border-line/80 bg-surface px-3 py-0 opacity-0 shadow-soft transition-[max-height,opacity,transform,padding] duration-300 ease-out pointer-events-none lg:hidden"
+      aria-label="Secciones principales"
+    >
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#introduccion">Inicio</a>
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#marco-teorico">Marco Institucional</a>
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#fichas-de-partidos">Partidos y coaliciones</a>
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#comparacion-general">Comparación general</a>
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#conclusion">Conclusión</a>
+      <a class="nav-link rounded-2xl px-4 py-3 text-sm font-semibold text-slate transition hover:bg-paper hover:text-ink" href="#fuentes">Fuentes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="px-4 pb-12 pt-6 sm:px-6 sm:pb-16 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 rounded-[2rem] border border-line/80 bg-surface px-6 py-10 shadow-soft sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:px-10 lg:py-14">
+        <div class="max-w-2xl">
+          <p class="inline-flex rounded-full border border-line bg-paper px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-steel">
+            Política y Ciudadanía
+          </p>
+          <h1 class="mt-5 font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            Sistema de Partidos Políticos en la Argentina
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate sm:text-xl">
+            Análisis descriptivo y comparativo de las principales fuerzas políticas contemporáneas
+          </p>
+          <div class="mt-8 max-w-3xl space-y-4 text-base leading-8 text-slate sm:text-lg">
+            <p>Este sitio presenta una síntesis organizada de los partidos políticos más relevantes en Argentina.</p>
+            <p>El objetivo es comprender sus diferencias, similitudes y propuestas en el marco del sistema democrático.</p>
+          </div>
+          <a
+            href="#introduccion"
+            class="hero-cta mt-10 inline-flex items-center gap-3 rounded-full border border-line bg-surface px-5 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:border-steel"
+          >
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-line bg-paper">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14" />
+                <path d="m19 12-7 7-7-7" />
+              </svg>
+            </span>
+            Ir al contenido
+          </a>
+        </div>
+
+        <div class="hero-visual-shell">
+          <div class="hero-visual rounded-[2rem] border border-line/80 bg-paper p-5 sm:p-6">
+            <div class="hero-ring hero-ring-lg"></div>
+            <div class="hero-ring hero-ring-md"></div>
+            <div class="hero-ring hero-ring-sm"></div>
+            <span class="hero-token hero-token-top-left">LLA</span>
+            <span class="hero-token hero-token-top-right">PJ</span>
+            <span class="hero-token hero-token-mid-left">FIT-U</span>
+            <span class="hero-token hero-token-mid-right">CC-ARI</span>
+            <span class="hero-token hero-token-bottom-left">UCR</span>
+            <span class="hero-token hero-token-bottom-right">PRO</span>
+            <span class="hero-token hero-token-center-bottom">HCF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="introduccion" class="section-space px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="grid gap-6 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+            <div>
+              <h2 class="font-display text-3xl tracking-tight text-ink sm:text-4xl">Inicio</h2>
+            </div>
+            <article class="content-panel max-w-4xl rounded-[1.75rem] border border-line/80 bg-surface p-6 shadow-soft sm:p-8">
+              <div class="space-y-5 text-lg leading-8 text-slate">
+                <p>El sistema político argentino se estructura a través de partidos que representan distintas visiones sobre la economía, el rol del Estado y la organización social.</p>
+                <p>En las últimas décadas, se han producido cambios significativos, incluyendo la aparición de nuevas fuerzas políticas y la reorganización de alianzas tradicionales.</p>
+                <p>Esto ha generado un escenario dinámico, con mayor diversidad de propuestas.</p>
+                <p>El presente trabajo tiene como objetivo describir y comparar los principales partidos políticos actuales, considerando sus características ideológicas, sus propuestas económicas y su base social.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="marco-teorico" class="section-space bg-soft/35 px-4 sm:px-6 lg:px-8" data-content-source="./content/marco-institucional.html" aria-busy="true">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="content-loading rounded-[1.75rem] border border-line/80 bg-surface p-6 shadow-soft sm:p-8" data-content-fallback>
+            <p class="text-base leading-7 text-slate">Cargando sección...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fichas-de-partidos" class="section-space px-4 sm:px-6 lg:px-8" data-content-source="./content/partidos.html" aria-busy="true">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="content-loading rounded-[1.75rem] border border-line/80 bg-surface p-5 shadow-soft sm:p-6" data-content-fallback>
+              <p class="text-base leading-7 text-slate">Cargando contenido...</p>
+            </div>
+            <div class="content-loading hidden rounded-[1.75rem] border border-line/80 bg-surface p-5 shadow-soft sm:p-6 md:block">
+              <p class="text-base leading-7 text-slate">Cargando contenido...</p>
+            </div>
+            <div class="content-loading hidden rounded-[1.75rem] border border-line/80 bg-surface p-5 shadow-soft sm:p-6 xl:block">
+              <p class="text-base leading-7 text-slate">Cargando contenido...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparacion-general" class="section-space bg-soft/35 px-4 sm:px-6 lg:px-8" data-content-source="./content/comparacion.html" aria-busy="true">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="content-loading rounded-[1.75rem] border border-line/80 bg-surface p-6 shadow-soft sm:p-8" data-content-fallback>
+            <p class="text-base leading-7 text-slate">Cargando sección...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusion" class="section-space px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="grid gap-6 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+            <div>
+              <h2 class="font-display text-3xl tracking-tight text-ink sm:text-4xl">Conclusión</h2>
+            </div>
+            <article class="content-panel max-w-4xl rounded-[1.75rem] border border-line/80 bg-surface p-6 shadow-soft sm:p-8">
+              <div class="space-y-5 text-lg leading-8 text-slate">
+                <p>El sistema de partidos en Argentina presenta una amplia diversidad de enfoques sobre el rol del Estado, la economía y la organización social.</p>
+                <p>Las principales diferencias se estructuran en torno al nivel de intervención estatal y al modelo de desarrollo económico.</p>
+                <p>A su vez, conviven partidos históricos con fuerzas políticas más recientes, lo que genera un escenario dinámico.</p>
+                <p>El análisis comparativo permite comprender mejor las propuestas disponibles y facilita una lectura más informada del sistema democrático.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fuentes" class="section-space bg-soft/30 px-4 pb-20 sm:px-6 lg:px-8" data-content-source="./content/fuentes.html" aria-busy="true">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-shell border-t border-line/80 pt-8">
+          <div class="content-loading rounded-[1.75rem] border border-line/80 bg-surface p-6 shadow-soft sm:p-8" data-content-fallback>
+            <p class="text-base leading-7 text-slate">Cargando sección...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer border-t border-line/80 bg-paper px-4 py-10 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl space-y-2 text-base leading-7 text-slate">
+      <p class="font-display text-xl tracking-tight text-ink">Trabajo escolar - Política y Ciudadanía</p>
+      <p>Alumno: Dante Emanuel Guspero</p>
+      <p>Curso: 5° año, división 5ta</p>
+      <p>Institución: Escuela Secundaria Nº 11 "Simón Bolívar"</p>
+    </div>
+  </footer>
+
+  <script src="./assets/script.js"></script>
+</body>
+</html>
